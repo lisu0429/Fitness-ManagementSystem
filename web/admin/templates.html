@@ -22,6 +22,8 @@
         .cell-actions { display: flex; gap: 6px; flex-wrap: nowrap; }
         /* 拒绝原因 */
         .reject-reason { font-size: 12px; color: var(--warn); margin-top: var(--sp-2); padding: var(--sp-2) var(--sp-3); background: var(--warn-soft); border-left: 3px solid var(--warn); border-radius: var(--r-sm); }
+        /* 弹窗内错误提示（页面顶部 #alert 会被遮罩挡住） */
+        .modal__error { font-size: 13px; line-height: 1.5; color: var(--danger, #e5484d); margin-top: var(--sp-3); padding: var(--sp-3); background: rgba(229, 72, 77, 0.08); border-left: 3px solid var(--danger, #e5484d); border-radius: var(--r-sm); white-space: pre-wrap; word-break: break-word; }
         /* 模板审批 Tab（顶部导航条） */
         .tabs { display: flex; gap: 4px; border-bottom: 1px solid rgba(163, 177, 198, 0.25); margin-bottom: var(--sp-5); background: transparent; box-shadow: none; padding: 0; border-radius: 0; }
         .tabs .tab { padding: var(--sp-3) var(--sp-5); cursor: pointer; border: none; background: none; font-size: 14px; color: var(--text-muted); border-bottom: 3px solid transparent; border-radius: 0; box-shadow: none; transition: all var(--t-base); font-weight: 600; }
@@ -324,6 +326,8 @@
                 </div>
 
                 <div class="reject-reason" id="edRejectReason" style="display:none;"></div>
+                <!-- 保存失败提示必须放在弹窗内：页面顶部的 #alert 会被弹窗遮住，用户看不到 -->
+                <div id="edError" class="modal__error" style="display:none;"></div>
             </div>
             <div class="modal__foot">
                 <button class="btn btn--ghost" id="edCancel">取消</button>
@@ -416,6 +420,25 @@
         selectTab(TABS[0].key);
 
         // ===== API =====
+        function zhValidationMsg(m) {
+            if (!m) return '';
+            const rules = [
+                [/^Input should be greater than or equal to (\d+)$/, '必须 ≥ $1'],
+                [/^Input should be less than or equal to (\d+)$/, '必须 ≤ $1'],
+                [/^Input should be a valid integer.*$/, '必须是整数'],
+                [/^Input should be a valid number.*$/, '必须是数字'],
+                [/^Input should be a valid string$/, '必须是文本'],
+                [/^Field required$/, '必填'],
+                [/^String should have at most (\d+) characters$/, '最多 $1 个字符'],
+                [/^String should have at least (\d+) characters$/, '至少 $1 个字符'],
+                [/^Input should be '(.+)'$/, '只能是 $1 之一'],
+            ];
+            for (const [re, rep] of rules) {
+                if (re.test(m)) return m.replace(re, rep);
+            }
+            return m;
+        }
+
         async function api(method, path, body) {
             const headers = { 'Content-Type': 'application/json' };
             const token = localStorage.getItem(TOKEN_KEY);
@@ -431,7 +454,17 @@
             }
             if (!resp.ok) {
                 const err = await resp.json().catch(() => ({ detail: resp.statusText }));
-                throw new Error(err.detail || `HTTP ${resp.status}`);
+                let msg = err.detail || err.error || `HTTP ${resp.status}`;
+                // FastAPI 422 的 detail 是数组；直接塞进 new Error() 只会显示 [object Object]
+                if (Array.isArray(msg)) {
+                    msg = msg.map((d) => {
+                        const loc = Array.isArray(d?.loc) ? d.loc.filter((x) => x !== 'body').join('.') : '';
+                        return `${loc ? loc + '：' : ''}${zhValidationMsg(d?.msg) || JSON.stringify(d)}`;
+                    }).join('\n');
+                } else if (msg && typeof msg === 'object') {
+                    msg = JSON.stringify(msg);
+                }
+                throw new Error(msg);
             }
             if (resp.status === 204) return null;
             return resp.json();
@@ -738,6 +771,7 @@
         async function openEdit(id) {
             state.editingId = id;
             state.editingWeeks = [];
+            clearEditError();
             document.getElementById('edRejectReason').style.display = 'none';
             document.getElementById('edName').value = '';
             document.getElementById('edDescription').value = '';
@@ -982,27 +1016,54 @@
             state.editingWeeks[wi].days.forEach((d, i) => d.day = i + 1);
         }
 
+        function showEditError(msg) {
+            const el = document.getElementById('edError');
+            if (!el) { showAlert(msg, 'error'); return; }
+            el.textContent = msg;
+            el.style.display = '';
+            el.scrollIntoView({ block: 'nearest' });
+        }
+        function clearEditError() {
+            const el = document.getElementById('edError');
+            if (!el) return;
+            el.textContent = '';
+            el.style.display = 'none';
+        }
+
         async function saveEdit() {
+            clearEditError();
             const name = document.getElementById('edName').value.trim();
-            if (!name) { showAlert('请填写模板名', 'error'); return; }
+            if (!name) { showEditError('请填写模板名'); return; }
             const goal = document.getElementById('edGoal').value;
             const level = document.getElementById('edLevel').value;
             const description = document.getElementById('edDescription').value.trim();
 
+            if (state.editingWeeks.length === 0) {
+                showEditError('还没有训练周：请先点右侧「➕ 添加周」');
+                return;
+            }
+
             // 校验：每个动作必须有 exercise_id
+            // 注意 exercise_id 可能是 null，直接 .trim() 会抛 TypeError，导致点保存毫无反应
             for (let wi = 0; wi < state.editingWeeks.length; wi++) {
                 for (let di = 0; di < state.editingWeeks[wi].days.length; di++) {
                     for (let ei = 0; ei < state.editingWeeks[wi].days[di].exercises.length; ei++) {
                         const ex = state.editingWeeks[wi].days[di].exercises[ei];
-                        if (!ex.exercise_id.trim()) {
-                            showAlert(`第 ${wi + 1} 周 D${di + 1} 有动作未填写动作ID`, 'error');
+                        if (!String(ex.exercise_id ?? '').trim()) {
+                            showEditError(`第 ${wi + 1} 周 D${di + 1} 第 ${ei + 1} 个动作还没选动作（ID 为空）`);
                             return;
                         }
+                        // 组数/次数/休息留空会发 null，后端要求整数 → 用默认值兜底
+                        if (ex.sets === null || ex.sets === '' || ex.sets === undefined) ex.sets = 3;
+                        if (ex.reps === null || ex.reps === '' || ex.reps === undefined) ex.reps = 10;
+                        if (ex.rest_sec === null || ex.rest_sec === '') ex.rest_sec = 60;
                     }
                 }
             }
 
             const body = { name, goal, level, description, weeks: state.editingWeeks };
+            const saveBtn = document.getElementById('edSave');
+            saveBtn.disabled = true;
             try {
                 if (state.editingId) {
                     const path = state.editingAsAdmin
@@ -1018,7 +1079,9 @@
                 closeEdit();
                 loadList();
             } catch (e) {
-                showAlert(e.message, 'error');
+                showEditError(e.message || '保存失败，请重试');
+            } finally {
+                saveBtn.disabled = false;
             }
         }
 
