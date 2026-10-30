@@ -32,7 +32,7 @@ import starlette.config
 _original_read_file = starlette.config.Config._read_file
 
 
-def _read_file_utf8(self, file_name):
+def _read_file_utf8(self, file_name, encoding="utf-8"):
     file_values: dict[str, str] = {}
     try:
         with open(file_name, encoding="utf-8") as input_file:

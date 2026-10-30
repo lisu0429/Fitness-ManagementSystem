@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="660" viewBox="0 0 1040 660" role="img" aria-label="AI 教练一次对话的数据流">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1020"/>
+      <stop offset="100%" stop-color="#121A33"/>
+    </linearGradient>
+    <linearGradient id="orange2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FF8A3D"/>
+      <stop offset="100%" stop-color="#FF4D6D"/>
+    </linearGradient>
+    <pattern id="grid2" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0V28" fill="none" stroke="#7C8DB5" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+    <style>
+      .t2 { font-family: 'Microsoft YaHei','PingFang SC','Segoe UI',sans-serif; fill:#E8EEFB; }
+      .m2 { font-family: 'Microsoft YaHei','PingFang SC','Segoe UI',sans-serif; fill:#8FA3C8; }
+      .s2 { font-family: 'Microsoft YaHei','PingFang SC','Segoe UI',sans-serif; fill:#C3D0E8; }
+    </style>
+  </defs>
+
+  <rect width="1040" height="660" fill="url(#bg2)"/>
+  <rect width="1040" height="660" fill="url(#grid2)"/>
+
+  <text x="48" y="52" class="t2" font-size="24" font-weight="700">AI 教练：一次对话里发生了什么</text>
+  <text x="48" y="80" class="m2" font-size="15">四类场景（问答 / 计划 / 动作替代 / 饮食）共用同一条链路，区别只在 Prompt 模板</text>
+
+  <!-- vertical line -->
+  <line x1="86" y1="128" x2="86" y2="588" stroke="#33456F" stroke-width="2"/>
+
+  <!-- step 1 -->
+  <circle cx="86" cy="150" r="17" fill="url(#orange2)"/>
+  <text x="86" y="156" class="t2" font-size="14" font-weight="700" text-anchor="middle">1</text>
+  <text x="120" y="146" class="t2" font-size="17" font-weight="600">用户发消息</text>
+  <text x="120" y="170" class="m2" font-size="13.5">前端 POST /api/v1/chat/messages，走 SSE 长连接，逐字渲染</text>
+
+  <!-- step 2 -->
+  <circle cx="86" cy="230" r="17" fill="#243358" stroke="#3E5283"/>
+  <text x="86" y="236" class="s2" font-size="14" font-weight="700" text-anchor="middle">2</text>
+  <text x="120" y="226" class="t2" font-size="17" font-weight="600">取最近 5 轮上下文</text>
+  <text x="120" y="250" class="m2" font-size="13.5">Redis 命中直接复用；Redis 不在线时回 MySQL 读历史，链路不中断</text>
+
+  <!-- step 3 -->
+  <circle cx="86" cy="310" r="17" fill="#243358" stroke="#3E5283"/>
+  <text x="86" y="316" class="s2" font-size="14" font-weight="700" text-anchor="middle">3</text>
+  <text x="120" y="306" class="t2" font-size="17" font-weight="600">Chroma 检索动作知识</text>
+  <text x="120" y="330" class="m2" font-size="13.5">按问题召回 Top-K 子块，再回溯父块拿完整步骤说明</text>
+
+  <!-- step 4 -->
+  <circle cx="86" cy="390" r="17" fill="#243358" stroke="#3E5283"/>
+  <text x="86" y="396" class="s2" font-size="14" font-weight="700" text-anchor="middle">4</text>
+  <text x="120" y="386" class="t2" font-size="17" font-weight="600">拼 Prompt，调 LLM</text>
+  <text x="120" y="410" class="m2" font-size="13.5">OpenAI 兼容协议；换模型只改 .env，不改业务代码</text>
+
+  <!-- step 5 -->
+  <circle cx="86" cy="470" r="17" fill="#243358" stroke="#3E5283"/>
+  <text x="86" y="476" class="s2" font-size="14" font-weight="700" text-anchor="middle">5</text>
+  <text x="120" y="466" class="t2" font-size="17" font-weight="600">流式回传并落库</text>
+  <text x="120" y="490" class="m2" font-size="13.5">delta 实时推送；结束后写 messages、会话摘要与 ai_call_logs</text>
+
+  <!-- step 6 -->
+  <circle cx="86" cy="550" r="17" fill="#243358" stroke="#3E5283"/>
+  <text x="86" y="556" class="s2" font-size="14" font-weight="700" text-anchor="middle">6</text>
+  <text x="120" y="546" class="t2" font-size="17" font-weight="600">记账与链路追踪</text>
+  <text x="120" y="570" class="m2" font-size="13.5">tokens / 成本 / 延迟进表；trace_spans 记录整条请求的每一段</text>
+
+  <!-- right side note card -->
+  <rect x="700" y="140" width="300" height="196" rx="14" fill="#141C33" stroke="#2C3B60"/>
+  <text x="722" y="172" class="t2" font-size="16" font-weight="600">父块 / 子块</text>
+  <text x="722" y="200" class="m2" font-size="13">父块：一个动作的完整说明</text>
+  <text x="722" y="224" class="m2" font-size="13">子块：拆到每一步，单独向量化</text>
+  <text x="722" y="256" class="s2" font-size="13">检索用子块，回答用父块</text>
+  <text x="722" y="280" class="m2" font-size="13">粒度细，答案又不碎</text>
+  <line x1="722" y1="296" x2="978" y2="296" stroke="#2C3B60"/>
+  <text x="722" y="318" class="m2" font-size="12.5">代码：backend/app/services/rag_service.py</text>
+
+  <rect x="700" y="356" width="300" height="176" rx="14" fill="#141C33" stroke="#2C3B60"/>
+  <text x="722" y="388" class="t2" font-size="16" font-weight="600">断线就止损</text>
+  <text x="722" y="416" class="m2" font-size="13">浏览器关页面 → 后端收到取消</text>
+  <text x="722" y="440" class="m2" font-size="13">→ 立即关闭上游 httpx 连接</text>
+  <text x="722" y="464" class="m2" font-size="13">→ 不再产生新的 token 计费</text>
+  <line x1="722" y1="482" x2="978" y2="482" stroke="#2C3B60"/>
+  <text x="722" y="506" class="m2" font-size="12.5">已收到的 delta 仍会保存并标记</text>
+
+  <text x="48" y="628" class="m2" font-size="13">说明：图中组件与路径均可在 backend/app/api/v1/chat.py、services/rag_service.py 中对应到具体实现</text>
+</svg>

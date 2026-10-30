@@ -1,0 +1,1238 @@
+{
+  "四分化": {
+    "name": "四分化",
+    "days": [
+      {
+        "day": 1,
+        "count": 8,
+        "warmup_count": 3,
+        "main_count": 5,
+        "actions": [
+          {
+            "action_id": "band-pull-apart",
+            "name": "弹力带拉开",
+            "body": "肩与上肢",
+            "dose": "2组，约20次",
+            "note": "向远端拉并保持张力。",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV1S8ArzREru",
+              "url": "https://www.bilibili.com/video/BV1S8ArzREru",
+              "start": 38.8,
+              "end": 63.28,
+              "label": "弹力带拉开"
+            }
+          },
+          {
+            "action_id": "band-shoulder-circles",
+            "name": "弹力带绕肩",
+            "body": "肩与上肢",
+            "dose": "2组",
+            "note": "幅度保持较小并维持弹力带张力。",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV1S8ArzREru",
+              "url": "https://www.bilibili.com/video/BV1S8ArzREru",
+              "start": 63.28,
+              "end": 101.74,
+              "label": "弹力带绕肩"
+            }
+          },
+          {
+            "action_id": "handstand-press-warmup",
+            "name": "靠墙倒立推肩",
+            "body": "肩与上肢",
+            "dose": "2–3组，做到充分激活",
+            "note": "能力不足时用折刀式俯卧撑退阶，二选一。 能力不足时可用折刀式俯卧撑替代，二选一。",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV1S8ArzREru",
+              "url": "https://www.bilibili.com/video/BV1S8ArzREru",
+              "start": 101.74,
+              "end": 180.58,
+              "label": "倒立推肩"
+            }
+          },
+          {
+            "action_id": "incline-machine-press",
+            "name": "上斜器械推胸",
+            "body": "胸",
+            "dose": "1组适应 + 3组正式，每组10–12次",
+            "note": "腰部贴靠垫，不能把平板卧推姿势机械照搬到器械。",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV1S8ArzREru",
+              "url": "https://www.bilibili.com/video/BV1S8ArzREru",
+              "start": 763.99,
+              "end": 878.78,
+              "label": "上斜器械推胸"
+            }
+          },
+          {
+            "action_id": "barbell-bench-press",
+            "name": "杠铃卧推",
+            "body": "胸",
+            "dose": "1组热身激活 + 5组正式；正式组约10次，后几组只能8次时可保持重量做8次",
+            "note": "主项；以躯干仍能稳定为结束标准，不为触胸幅度牺牲稳定。",
+            "purpose": "主项",
+            "phase": "main",
+            "source": {
+              "video_id": "BV1S8ArzREru",
+              "url": "https://www.bilibili.com/video/BV1S8ArzREru",
+              "start": 307.05,
+              "end": 759,
+              "label": "杠铃卧推"
+            }
+          },
+          {
+            "action_id": "standing-overhead-press",
+            "name": "站姿实力推",
+            "body": "肩",
+            "dose": "1组适应 + 3组正式，每组10–12次",
+            "note": "第一天为辅助安排；第四天主项剂量不同。 这一天作为辅助训练；第四天作为主项，组数和次数不同。",
+            "purpose": "辅助",
+            "phase": "main",
+            "source": {
+              "video_id": "BV1S8ArzREru",
+              "url": "https://www.bilibili.com/video/BV1S8ArzREru",
+              "start": 878.78,
+              "end": 1051.27,
+              "label": "站姿实力推"
+            }
+          },
+          {
+            "action_id": "cable-chest-fly",
+            "name": "绳索夹胸",
+            "body": "胸",
+            "dose": "1组适应/激活 + 3组正式；正式组8–15次，作者推荐约12次",
+            "note": "正式用绳索夹胸；双手向腹股沟/大腿根，保持挺胸。",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV1S8ArzREru",
+              "url": "https://www.bilibili.com/video/BV1S8ArzREru",
+              "start": 194.66,
+              "end": 303.25,
+              "label": "绳索夹胸"
+            }
+          },
+          {
+            "action_id": "overhead-cable-extension",
+            "name": "绳索过顶臂屈伸",
+            "body": "手臂",
+            "dose": null,
+            "note": "下放偏慢、伸起快；肘部靠拢。",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV1S8ArzREru",
+              "url": "https://www.bilibili.com/video/BV1S8ArzREru",
+              "start": 1051.27,
+              "end": 1153.97,
+              "label": "绳索过顶臂屈伸"
+            }
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "count": 8,
+        "warmup_count": 2,
+        "main_count": 6,
+        "actions": [
+          {
+            "action_id": "kneeling-elbow-extension",
+            "name": "跪姿肘屈伸",
+            "body": "肩胛与上肢",
+            "dose": null,
+            "note": "肩部主动支撑，不向下塌。 可缩小幅度，或选择静态练习。",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV1mwPMzZEg8",
+              "url": "https://www.bilibili.com/video/BV1mwPMzZEg8",
+              "start": 256.86,
+              "end": 406,
+              "label": "跪姿肘屈伸"
+            }
+          },
+          {
+            "action_id": "wall-back-active-stretch",
+            "name": "靠墙背部主动拉伸",
+            "body": "背与肩胛",
+            "dose": null,
+            "note": "主动向前送肩并配合呼吸。",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV1mwPMzZEg8",
+              "url": "https://www.bilibili.com/video/BV1mwPMzZEg8",
+              "start": 406,
+              "end": 535,
+              "label": "靠墙背部主动拉伸"
+            }
+          },
+          {
+            "action_id": "pull-up",
+            "name": "引体向上",
+            "body": "背",
+            "dose": "4组，每组10–12次",
+            "note": "基础不足时使用原片跪姿辅助版本。 基础不足时可选择跪姿辅助版本。",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV1mwPMzZEg8",
+              "url": "https://www.bilibili.com/video/BV1mwPMzZEg8",
+              "start": 1033.2,
+              "end": 1338.03,
+              "label": "引体向上"
+            }
+          },
+          {
+            "action_id": "supported-one-arm-cable-row",
+            "name": "有支撑的单臂坐姿绳索划船",
+            "body": "背",
+            "dose": "4组，每侧约12次",
+            "note": "上斜凳支撑；握法可采用反握、接近中立握或正握。",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV1mwPMzZEg8",
+              "url": "https://www.bilibili.com/video/BV1mwPMzZEg8",
+              "start": 746.07,
+              "end": 1033.2,
+              "label": "有支撑的单臂坐姿绳索划船"
+            }
+          },
+          {
+            "action_id": "barbell-curl",
+            "name": "杠铃弯举",
+            "body": "手臂",
+            "dose": null,
+            "note": "",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV1mwPMzZEg8",
+              "url": "https://www.bilibili.com/video/BV1mwPMzZEg8",
+              "start": 1698.02,
+              "end": 1822,
+              "label": "杠铃弯举"
+            }
+          },
+          {
+            "action_id": "straight-arm-pulldown",
+            "name": "直臂下压",
+            "body": "背",
+            "dose": "4组，每组12–15次",
+            "note": "约三分之二行程，回放不完全丢张力。",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV1mwPMzZEg8",
+              "url": "https://www.bilibili.com/video/BV1mwPMzZEg8",
+              "start": 535.48,
+              "end": 746.07,
+              "label": "直臂下压"
+            }
+          },
+          {
+            "action_id": "narrow-seated-row",
+            "name": "窄距坐姿划船",
+            "body": "背",
+            "dose": "4组，每组12–15次",
+            "note": "向肚脐附近偏下方向拉，不靠大幅后仰。",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV1mwPMzZEg8",
+              "url": "https://www.bilibili.com/video/BV1mwPMzZEg8",
+              "start": 1338.03,
+              "end": 1543.26,
+              "label": "窄距坐姿划船"
+            }
+          },
+          {
+            "action_id": "angled-handle-lat-pulldown",
+            "name": "高位下拉（含斜握把）",
+            "body": "背",
+            "dose": null,
+            "note": "",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV1mwPMzZEg8",
+              "url": "https://www.bilibili.com/video/BV1mwPMzZEg8",
+              "start": 1543.26,
+              "end": 1698.02,
+              "label": "斜握把高位下拉"
+            }
+          }
+        ]
+      },
+      {
+        "day": 3,
+        "count": 6,
+        "warmup_count": 1,
+        "main_count": 5,
+        "actions": [
+          {
+            "action_id": "worlds-greatest-stretch",
+            "name": "世界上最伟大的拉伸",
+            "body": "下肢",
+            "dose": "转体5–10次，拉伸保持约20秒",
+            "note": "",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV13nPFzCENK",
+              "url": "https://www.bilibili.com/video/BV13nPFzCENK",
+              "start": 36.32,
+              "end": 150.97,
+              "label": "世界上最伟大的拉伸"
+            }
+          },
+          {
+            "action_id": "split-stance-hip-hinge-plate-rotation",
+            "name": "分腿屈髋持片下蹲转体",
+            "body": "下肢",
+            "dose": "3组，每侧10–12次",
+            "note": "区分基础控制版本与爆发变化版本。",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV13nPFzCENK",
+              "url": "https://www.bilibili.com/video/BV13nPFzCENK",
+              "start": 677.37,
+              "end": 783.98,
+              "label": "分腿屈髋持片下蹲转体"
+            }
+          },
+          {
+            "action_id": "single-leg-dumbbell-romanian-deadlift",
+            "name": "单腿哑铃硬拉",
+            "body": "下肢",
+            "dose": "3组，每侧12次",
+            "note": "以髋部运动和单腿控制为主；可用一手扶支撑。",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV13nPFzCENK",
+              "url": "https://www.bilibili.com/video/BV13nPFzCENK",
+              "start": 420.85,
+              "end": 502.79,
+              "label": "单腿哑铃硬拉"
+            }
+          },
+          {
+            "action_id": "reclined-hip-adduction",
+            "name": "后靠式髋内收",
+            "body": "下肢",
+            "dose": "约4组",
+            "note": "身体后靠程度循序调整。",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV13nPFzCENK",
+              "url": "https://www.bilibili.com/video/BV13nPFzCENK",
+              "start": 150.97,
+              "end": 398.4,
+              "label": "后靠式髋内收"
+            }
+          },
+          {
+            "action_id": "rear-step-lunge-rear-leg-drive",
+            "name": "向后迈步弓步变式",
+            "body": "下肢",
+            "dose": null,
+            "note": "后侧腿伸膝参与发力。",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV13nPFzCENK",
+              "url": "https://www.bilibili.com/video/BV13nPFzCENK",
+              "start": 502.79,
+              "end": 677.37,
+              "label": "向后迈步弓步变式"
+            }
+          },
+          {
+            "action_id": "standing-calf-raise",
+            "name": "站姿提踵",
+            "body": "小腿",
+            "dose": "3–4组，每组15–20次",
+            "note": "前脚掌整体支撑，避免身体前后晃动。",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV13nPFzCENK",
+              "url": "https://www.bilibili.com/video/BV13nPFzCENK",
+              "start": 783.98,
+              "end": 936,
+              "label": "站姿提踵"
+            }
+          }
+        ]
+      },
+      {
+        "day": 4,
+        "count": 10,
+        "warmup_count": 4,
+        "main_count": 6,
+        "actions": [
+          {
+            "action_id": "prone-y-raise",
+            "name": "俯卧Y形举臂",
+            "body": "肩胛与上肢",
+            "dose": "2组",
+            "note": "躯干稳定，拇指向上；原片另示范Y字前后移动进阶。 能力足够时，可选择前后移动的进阶做法。",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV192Nwz4E9n",
+              "url": "https://www.bilibili.com/video/BV192Nwz4E9n",
+              "start": 344.03,
+              "end": 377.27,
+              "label": "俯卧Y字举臂"
+            }
+          },
+          {
+            "action_id": "band-pull-apart",
+            "name": "弹力带拉开",
+            "body": "肩与上肢",
+            "dose": "约10次",
+            "note": "与弹力带绕肩连续作为热身。 与弹力带绕肩连续完成热身。",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV192Nwz4E9n",
+              "url": "https://www.bilibili.com/video/BV192Nwz4E9n",
+              "start": 173.94,
+              "end": 214.98,
+              "label": "弹力带拉开"
+            }
+          },
+          {
+            "action_id": "band-shoulder-circles",
+            "name": "弹力带绕肩",
+            "body": "肩与上肢",
+            "dose": "约10次，前后各一轮",
+            "note": "保持弹力带张力，幅度不要过大。",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV192Nwz4E9n",
+              "url": "https://www.bilibili.com/video/BV192Nwz4E9n",
+              "start": 186.7,
+              "end": 218.14,
+              "label": "弹力带绕肩"
+            }
+          },
+          {
+            "action_id": "handstand-press-warmup",
+            "name": "靠墙倒立推肩",
+            "body": "肩与上肢",
+            "dose": null,
+            "note": "能力不足时用折刀式俯卧撑退阶。 能力不足时可用折刀式俯卧撑替代。",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV192Nwz4E9n",
+              "url": "https://www.bilibili.com/video/BV192Nwz4E9n",
+              "start": 219.84,
+              "end": 269.05,
+              "label": "倒立推肩"
+            }
+          },
+          {
+            "action_id": "supine-cable-face-pull",
+            "name": "仰卧绳索面拉",
+            "body": "肩",
+            "dose": "4组，每组10–15次",
+            "note": "取中段张力，不完全放直或拉到底。",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV192Nwz4E9n",
+              "url": "https://www.bilibili.com/video/BV192Nwz4E9n",
+              "start": 738.79,
+              "end": 991.54,
+              "label": "仰卧绳索面拉"
+            }
+          },
+          {
+            "action_id": "reverse-pec-deck",
+            "name": "反向蝴蝶机",
+            "body": "肩",
+            "dose": "4组，每组12–15次",
+            "note": "胸口贴靠垫，保持向外撑开的张力。",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV192Nwz4E9n",
+              "url": "https://www.bilibili.com/video/BV192Nwz4E9n",
+              "start": 409.59,
+              "end": 603.38,
+              "label": "反向蝴蝶机"
+            }
+          },
+          {
+            "action_id": "neutral-grip-dumbbell-front-raise",
+            "name": "哑铃前平举（含对握与正握）",
+            "body": "肩",
+            "dose": "4组，每组10–12次",
+            "note": "中立握为本日推荐变式；躯干与胸廓保持稳定。",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV192Nwz4E9n",
+              "url": "https://www.bilibili.com/video/BV192Nwz4E9n",
+              "start": 991.54,
+              "end": 1213.7,
+              "label": "中立握哑铃前平举"
+            }
+          },
+          {
+            "action_id": "seated-cable-curl",
+            "name": "坐姿绳索弯举",
+            "body": "手臂",
+            "dose": "与绳索过顶臂屈伸组成超级组；各4组，每组10–12次",
+            "note": "上臂靠膝，保持腕部与外旋控制，下降不完全松掉。",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV192Nwz4E9n",
+              "url": "https://www.bilibili.com/video/BV192Nwz4E9n",
+              "start": 1274.06,
+              "end": 1427.84,
+              "label": "坐姿绳索弯举（超级组第2项）"
+            }
+          },
+          {
+            "action_id": "standing-overhead-press",
+            "name": "站姿实力推",
+            "body": "肩",
+            "dose": "5组，每组8–10次",
+            "note": "本日为主项；与第一天1适应+3正式、10–12次不同。 这一天作为主项；第一天的安排是1组适应、3组正式，每组10–12次。",
+            "purpose": "主项",
+            "phase": "main",
+            "source": {
+              "video_id": "BV192Nwz4E9n",
+              "url": "https://www.bilibili.com/video/BV192Nwz4E9n",
+              "start": 603.38,
+              "end": 738.79,
+              "label": "站姿实力推"
+            }
+          },
+          {
+            "action_id": "overhead-cable-extension",
+            "name": "绳索过顶臂屈伸",
+            "body": "手臂",
+            "dose": "与坐姿绳索弯举组成超级组；各4组，每组10–12次",
+            "note": "低位滑轮，肘部靠拢；不要用肩部前移代偿。",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV192Nwz4E9n",
+              "url": "https://www.bilibili.com/video/BV192Nwz4E9n",
+              "start": 1223.92,
+              "end": 1274.06,
+              "label": "绳索过顶臂屈伸（超级组第1项）"
+            }
+          }
+        ]
+      }
+    ],
+    "total_actions": 32
+  },
+  "三分化": {
+    "name": "三分化",
+    "days": [
+      {
+        "day": 1,
+        "count": 14,
+        "warmup_count": 9,
+        "main_count": 5,
+        "actions": [
+          {
+            "action_id": "prone-y-raise",
+            "name": "俯卧Y形举臂",
+            "body": "肩胛与上肢",
+            "dose": null,
+            "note": "拇指向上，肩胛控制优先。",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV1CSoKBaEgK",
+              "url": "https://www.bilibili.com/video/BV1CSoKBaEgK",
+              "start": 4810,
+              "end": 4845,
+              "label": "俯卧Y字举臂"
+            }
+          },
+          {
+            "action_id": "ball-pectoralis-minor-release",
+            "name": "小球抵胸活动肩部",
+            "body": "热身与活动度",
+            "dose": null,
+            "note": "胸前软组织准备。",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV1CSoKBaEgK",
+              "url": "https://www.bilibili.com/video/BV1CSoKBaEgK",
+              "start": 4650,
+              "end": 4690,
+              "label": "球压胸小肌"
+            }
+          },
+          {
+            "action_id": "band-pull-apart",
+            "name": "弹力带拉开",
+            "body": "肩与上肢",
+            "dose": null,
+            "note": "保持弹力带张力。",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV1CSoKBaEgK",
+              "url": "https://www.bilibili.com/video/BV1CSoKBaEgK",
+              "start": 4750,
+              "end": 4780,
+              "label": "弹力带拉开"
+            }
+          },
+          {
+            "action_id": "band-shoulder-circles",
+            "name": "弹力带绕肩",
+            "body": "肩与上肢",
+            "dose": null,
+            "note": "",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV1CSoKBaEgK",
+              "url": "https://www.bilibili.com/video/BV1CSoKBaEgK",
+              "start": 4780,
+              "end": 4810,
+              "label": "弹力带绕肩"
+            }
+          },
+          {
+            "action_id": "plank-saw-scapular-warmup",
+            "name": "拉锯式平板动态热身",
+            "body": "肩胛与躯干",
+            "dose": null,
+            "note": "以肩胛活动和躯干稳定为目的。",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV1CSoKBaEgK",
+              "url": "https://www.bilibili.com/video/BV1CSoKBaEgK",
+              "start": 4845,
+              "end": 4885,
+              "label": "平板锯式肩胛热身"
+            }
+          },
+          {
+            "action_id": "foam-roll-biceps",
+            "name": "泡沫轴放松：二头肌",
+            "body": "二头肌",
+            "dose": null,
+            "note": "",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV1CSoKBaEgK",
+              "url": "https://www.bilibili.com/video/BV1CSoKBaEgK",
+              "start": 4725,
+              "end": 4750,
+              "label": "泡沫轴二头肌放松"
+            }
+          },
+          {
+            "action_id": "foam-roll-chest",
+            "name": "泡沫轴放松：胸部",
+            "body": "胸部",
+            "dose": null,
+            "note": "",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV1CSoKBaEgK",
+              "url": "https://www.bilibili.com/video/BV1CSoKBaEgK",
+              "start": 4690,
+              "end": 4725,
+              "label": "泡沫轴胸部放松"
+            }
+          },
+          {
+            "action_id": "wall-finger-wrist-support",
+            "name": "靠墙五指支撑",
+            "body": "热身与活动度",
+            "dose": null,
+            "note": "",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV1CSoKBaEgK",
+              "url": "https://www.bilibili.com/video/BV1CSoKBaEgK",
+              "start": 4990,
+              "end": 5040,
+              "label": "靠墙五指腕支撑"
+            }
+          },
+          {
+            "action_id": "handstand-press-warmup",
+            "name": "靠墙倒立推肩",
+            "body": "肩与上肢",
+            "dose": null,
+            "note": "能力不足时可选择折刀式俯卧撑。",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV1CSoKBaEgK",
+              "url": "https://www.bilibili.com/video/BV1CSoKBaEgK",
+              "start": 4885,
+              "end": 4990,
+              "label": "倒立推肩"
+            }
+          },
+          {
+            "action_id": "incline-dumbbell-chest-press",
+            "name": "上斜哑铃卧推",
+            "body": "胸",
+            "dose": "4×12，起步每组保留2–3次余量；动作不变形后再考虑延长间歇或加重",
+            "note": "",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV1CSoKBaEgK",
+              "url": "https://www.bilibili.com/video/BV1CSoKBaEgK",
+              "start": 1647,
+              "end": 2892,
+              "label": "哑铃上斜卧推"
+            }
+          },
+          {
+            "action_id": "lying-barbell-triceps-extension",
+            "name": "仰卧杠铃臂屈伸",
+            "body": "三头肌",
+            "dose": "起步4×15，保留约2次余量",
+            "note": "计划篇后续可进到4×12，再让最后两组接近力竭并考虑加重。 后续可进到4×12，再让最后两组接近力竭并考虑加重。",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV1CSoKBaEgK",
+              "url": "https://www.bilibili.com/video/BV1CSoKBaEgK",
+              "start": 3548,
+              "end": 4155,
+              "label": "仰卧杠铃臂屈伸"
+            }
+          },
+          {
+            "action_id": "parallel-bar-dip-home",
+            "name": "双杠臂屈伸",
+            "body": "胸与上肢",
+            "dose": "4组，每组12次或做到力竭",
+            "note": "侧重下胸；可按能力选择退阶动作。 侧重下胸，可按能力选择退阶动作。",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV1CSoKBaEgK",
+              "url": "https://www.bilibili.com/video/BV1CSoKBaEgK",
+              "start": 2892,
+              "end": 3548,
+              "label": "双杠臂屈伸"
+            }
+          },
+          {
+            "action_id": "y-lateral-raise-external-rotation",
+            "name": "外旋位绳索Y字侧平举",
+            "body": "肩",
+            "dose": "3组；每组10次、休息5秒、再10次",
+            "note": "",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV1CSoKBaEgK",
+              "url": "https://www.bilibili.com/video/BV1CSoKBaEgK",
+              "start": 4155,
+              "end": 4660,
+              "label": "Y字侧平举"
+            }
+          },
+          {
+            "action_id": "barbell-bench-press",
+            "name": "杠铃卧推",
+            "body": "胸",
+            "dose": "1组15次热身；正式组12、10、8次，约RPE8、保留约2次；休息按组间休息原则，不固定",
+            "note": "后续递进安排见顶部“计划原理”。 后续递进见训练计划中的“计划原理”。",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV1CSoKBaEgK",
+              "url": "https://www.bilibili.com/video/BV1CSoKBaEgK",
+              "start": 0,
+              "end": 1647,
+              "label": "杠铃卧推"
+            }
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "count": 11,
+        "warmup_count": 6,
+        "main_count": 5,
+        "actions": [
+          {
+            "action_id": "worlds-greatest-stretch",
+            "name": "世界上最伟大的拉伸",
+            "body": "下肢",
+            "dose": "一侧做约10次，再换另一侧",
+            "note": "",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV1v5opBhEDc",
+              "url": "https://www.bilibili.com/video/BV1v5opBhEDc",
+              "start": 4802,
+              "end": 4845,
+              "label": "世界上最伟大的拉伸"
+            }
+          },
+          {
+            "action_id": "quadruped-scapular-support-breathing",
+            "name": "四足位肩胛支撑与呼吸（作者称跪姿死虫）",
+            "body": "肩",
+            "dose": null,
+            "note": "肩胛支撑配合呼吸。",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV1v5opBhEDc",
+              "url": "https://www.bilibili.com/video/BV1v5opBhEDc",
+              "start": 4975,
+              "end": 5010,
+              "label": "四足位肩胛支撑与呼吸"
+            }
+          },
+          {
+            "action_id": "band-pull-apart",
+            "name": "弹力带拉开",
+            "body": "肩与上肢",
+            "dose": "约2组，每组10–12次",
+            "note": "保持张力。",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV1v5opBhEDc",
+              "url": "https://www.bilibili.com/video/BV1v5opBhEDc",
+              "start": 4845,
+              "end": 4890,
+              "label": "弹力带拉开"
+            }
+          },
+          {
+            "action_id": "band-shoulder-circles",
+            "name": "弹力带绕肩",
+            "body": "肩与上肢",
+            "dose": "约2组，每组10–12次",
+            "note": "按前后方向完成。",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV1v5opBhEDc",
+              "url": "https://www.bilibili.com/video/BV1v5opBhEDc",
+              "start": 4890,
+              "end": 4935,
+              "label": "弹力带绕肩"
+            }
+          },
+          {
+            "action_id": "foam-roller-spinal-rib-control-warmup",
+            "name": "泡沫轴胸背支撑抬臂",
+            "body": "躯干",
+            "dose": null,
+            "note": "维持呼吸和肋骨控制。",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV1v5opBhEDc",
+              "url": "https://www.bilibili.com/video/BV1v5opBhEDc",
+              "start": 4935,
+              "end": 4975,
+              "label": "泡沫轴脊柱活动与肋骨控制热身"
+            }
+          },
+          {
+            "action_id": "wall-forearm-foam-roller-upward-slide",
+            "name": "靠墙小臂撑泡沫轴上推",
+            "body": "肩",
+            "dose": null,
+            "note": "",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV1v5opBhEDc",
+              "url": "https://www.bilibili.com/video/BV1v5opBhEDc",
+              "start": 5010,
+              "end": 5048,
+              "label": "靠墙小臂撑泡沫轴上推（墙肘对抗）"
+            }
+          },
+          {
+            "action_id": "single-arm-full-flexion-cable-pulldown",
+            "name": "单臂全肩屈绳索下拉",
+            "body": "背",
+            "dose": "共4组：前三组12次、不到力竭；末组10次力竭，休息5秒，再5次力竭",
+            "note": "后续一次可增加到两组10+5，再考虑加重；动作感觉与质量优先。 后续可增加到两组10+5，再考虑加重。",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV1v5opBhEDc",
+              "url": "https://www.bilibili.com/video/BV1v5opBhEDc",
+              "start": 0,
+              "end": 1683,
+              "label": "单手钢线下拉"
+            }
+          },
+          {
+            "action_id": "single-arm-machine-row",
+            "name": "单臂器械划船",
+            "body": "背",
+            "dose": "前三组10次、不到力竭；末组10次力竭，停约5秒后再做5次力竭",
+            "note": "",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV1v5opBhEDc",
+              "url": "https://www.bilibili.com/video/BV1v5opBhEDc",
+              "start": 1683,
+              "end": 3112,
+              "label": "单手器械划船"
+            }
+          },
+          {
+            "action_id": "seated-open-elbow-cable-row",
+            "name": "坐姿开肘绳索划船",
+            "body": "背",
+            "dose": null,
+            "note": "",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV1v5opBhEDc",
+              "url": "https://www.bilibili.com/video/BV1v5opBhEDc",
+              "start": 3721,
+              "end": 4354,
+              "label": "坐姿开肘划船"
+            }
+          },
+          {
+            "action_id": "seated-cable-curl",
+            "name": "坐姿绳索弯举",
+            "body": "手臂",
+            "dose": null,
+            "note": "",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV1v5opBhEDc",
+              "url": "https://www.bilibili.com/video/BV1v5opBhEDc",
+              "start": 4354,
+              "end": 4802,
+              "label": "钢线弯举"
+            }
+          },
+          {
+            "action_id": "angled-handle-lat-pulldown",
+            "name": "高位下拉（含斜握把）",
+            "body": "背",
+            "dose": "4组，12–8次区间",
+            "note": "作者希望重量逐步提高；不要把四组固定成单一次数。 重量逐步提高，四组不必固定成同一个次数。",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV1v5opBhEDc",
+              "url": "https://www.bilibili.com/video/BV1v5opBhEDc",
+              "start": 3112,
+              "end": 3721,
+              "label": "对握下拉"
+            }
+          }
+        ]
+      },
+      {
+        "day": 3,
+        "count": 16,
+        "warmup_count": 12,
+        "main_count": 4,
+        "actions": [
+          {
+            "action_id": "90-90-hip-switch",
+            "name": "90/90髋部转换",
+            "body": "髋部",
+            "dose": null,
+            "note": "",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV17aovBqEdg",
+              "url": "https://www.bilibili.com/video/BV17aovBqEdg",
+              "start": 60,
+              "end": 150,
+              "label": "90/90髋部转换"
+            }
+          },
+          {
+            "action_id": "worlds-greatest-stretch",
+            "name": "世界上最伟大的拉伸",
+            "body": "下肢",
+            "dose": "每侧约5–10次，配合呼吸完成",
+            "note": "与毛毛虫爬行连接完成。",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV17aovBqEdg",
+              "url": "https://www.bilibili.com/video/BV17aovBqEdg",
+              "start": 575,
+              "end": 602,
+              "label": "世界上最伟大的拉伸"
+            }
+          },
+          {
+            "action_id": "single-leg-eyes-closed-balance",
+            "name": "单腿闭眼站立",
+            "body": "热身与活动度",
+            "dose": null,
+            "note": "以平衡激活为目的，必要时保留支撑。",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV17aovBqEdg",
+              "url": "https://www.bilibili.com/video/BV17aovBqEdg",
+              "start": 150,
+              "end": 230,
+              "label": "闭眼单腿平衡"
+            }
+          },
+          {
+            "action_id": "inchworm-crawl-mentioned",
+            "name": "毛毛虫行走",
+            "body": "热身与活动度",
+            "dose": null,
+            "note": "与世界上最伟大的拉伸连接完成。",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV17aovBqEdg",
+              "url": "https://www.bilibili.com/video/BV17aovBqEdg",
+              "start": 545,
+              "end": 575,
+              "label": "毛毛虫爬行"
+            }
+          },
+          {
+            "action_id": "foam-roll-adductor",
+            "name": "泡沫轴放松：大腿内侧",
+            "body": "大腿内侧",
+            "dose": null,
+            "note": "",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV17aovBqEdg",
+              "url": "https://www.bilibili.com/video/BV17aovBqEdg",
+              "start": 405,
+              "end": 450,
+              "label": "泡沫轴内收肌放松"
+            }
+          },
+          {
+            "action_id": "foam-roll-quadriceps",
+            "name": "泡沫轴放松：大腿前侧",
+            "body": "大腿前侧",
+            "dose": null,
+            "note": "",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV17aovBqEdg",
+              "url": "https://www.bilibili.com/video/BV17aovBqEdg",
+              "start": 360,
+              "end": 405,
+              "label": "泡沫轴股四头肌放松"
+            }
+          },
+          {
+            "action_id": "foam-roll-hamstring",
+            "name": "泡沫轴放松：大腿后侧",
+            "body": "大腿后侧",
+            "dose": null,
+            "note": "",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV17aovBqEdg",
+              "url": "https://www.bilibili.com/video/BV17aovBqEdg",
+              "start": 315,
+              "end": 360,
+              "label": "泡沫轴腘绳肌放松"
+            }
+          },
+          {
+            "action_id": "foam-roll-anterior-lower-leg",
+            "name": "泡沫轴放松：小腿前侧",
+            "body": "小腿前侧",
+            "dose": null,
+            "note": "",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV17aovBqEdg",
+              "url": "https://www.bilibili.com/video/BV17aovBqEdg",
+              "start": 230,
+              "end": 270,
+              "label": "泡沫轴小腿前侧放松"
+            }
+          },
+          {
+            "action_id": "foam-roll-calf",
+            "name": "泡沫轴放松：小腿后侧",
+            "body": "小腿后侧",
+            "dose": null,
+            "note": "",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV17aovBqEdg",
+              "url": "https://www.bilibili.com/video/BV17aovBqEdg",
+              "start": 270,
+              "end": 315,
+              "label": "泡沫轴小腿放松"
+            }
+          },
+          {
+            "action_id": "foam-roll-glute",
+            "name": "泡沫轴放松：臀部",
+            "body": "臀部",
+            "dose": null,
+            "note": "",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV17aovBqEdg",
+              "url": "https://www.bilibili.com/video/BV17aovBqEdg",
+              "start": 450,
+              "end": 500,
+              "label": "泡沫轴臀部放松"
+            }
+          },
+          {
+            "action_id": "foam-roll-tfl",
+            "name": "泡沫轴放松：阔筋膜张肌",
+            "body": "阔筋膜张肌",
+            "dose": null,
+            "note": "",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV17aovBqEdg",
+              "url": "https://www.bilibili.com/video/BV17aovBqEdg",
+              "start": 500,
+              "end": 545,
+              "label": "泡沫轴阔筋膜张肌放松"
+            }
+          },
+          {
+            "action_id": "frog-hip-mobility",
+            "name": "青蛙式髋部活动",
+            "body": "髋部/下肢",
+            "dose": null,
+            "note": "",
+            "purpose": "热身",
+            "phase": "warmup",
+            "source": {
+              "video_id": "BV17aovBqEdg",
+              "url": "https://www.bilibili.com/video/BV17aovBqEdg",
+              "start": 0,
+              "end": 60,
+              "label": "动态青蛙趴/青蛙式髋部活动"
+            }
+          },
+          {
+            "action_id": "bulgarian-split-squat",
+            "name": "保加利亚蹲",
+            "body": "下肢/大腿前侧",
+            "dose": null,
+            "note": "单腿练习，注意保持平衡与稳定。",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV17aovBqEdg",
+              "url": "https://www.bilibili.com/video/BV17aovBqEdg",
+              "start": 1392,
+              "end": 1923,
+              "label": "保加利亚蹲"
+            }
+          },
+          {
+            "action_id": "single-leg-dumbbell-romanian-deadlift",
+            "name": "单腿哑铃硬拉",
+            "body": "下肢",
+            "dose": null,
+            "note": "第一项正式动作，注意单腿稳定与控制。 本次腿部训练的第一个正式动作。",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV17aovBqEdg",
+              "url": "https://www.bilibili.com/video/BV17aovBqEdg",
+              "start": 602,
+              "end": 1392,
+              "label": "单腿硬拉"
+            }
+          },
+          {
+            "action_id": "back-extension-roman-chair",
+            "name": "山羊挺身",
+            "body": "腿臀",
+            "dose": "3组；每组约8次，保留余量",
+            "note": "",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV17aovBqEdg",
+              "url": "https://www.bilibili.com/video/BV17aovBqEdg",
+              "start": 3079,
+              "end": 3488.82,
+              "label": "山羊挺身"
+            }
+          },
+          {
+            "action_id": "romanian-deadlift",
+            "name": "罗马尼亚硬拉",
+            "body": "下肢/大腿后侧/臀",
+            "dose": "3组",
+            "note": "髋铰链与后侧链动作；跟练片明确与山羊挺身均为三组。",
+            "purpose": "",
+            "phase": "main",
+            "source": {
+              "video_id": "BV17aovBqEdg",
+              "url": "https://www.bilibili.com/video/BV17aovBqEdg",
+              "start": 2534,
+              "end": 3079,
+              "label": "罗马尼亚硬拉"
+            }
+          }
+        ]
+      }
+    ],
+    "total_actions": 41
+  }
+}

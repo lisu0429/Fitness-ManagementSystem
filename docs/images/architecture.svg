@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-label="FitHub 运行时架构">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1020"/>
+      <stop offset="100%" stop-color="#121A33"/>
+    </linearGradient>
+    <linearGradient id="core" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1D2848"/>
+      <stop offset="100%" stop-color="#151D36"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FF8A3D"/>
+      <stop offset="100%" stop-color="#FF4D6D"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#7C8DB5"/>
+    </marker>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0V28" fill="none" stroke="#7C8DB5" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+    <style>
+      .t  { font-family: 'Microsoft YaHei','PingFang SC','Segoe UI',sans-serif; fill:#E8EEFB; }
+      .m  { font-family: 'Microsoft YaHei','PingFang SC','Segoe UI',sans-serif; fill:#8FA3C8; }
+      .s  { font-family: 'Microsoft YaHei','PingFang SC','Segoe UI',sans-serif; fill:#C3D0E8; }
+      .box{ fill:#141C33; stroke:#2C3B60; stroke-width:1.5; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <rect width="1200" height="700" fill="url(#grid)"/>
+
+  <text x="48" y="52" class="t" font-size="24" font-weight="700">运行时架构</text>
+  <text x="48" y="80" class="m" font-size="15">前端、后端、API 与静态资源都挂在同一个 8000 端口上，部署只需要一个 uvicorn 进程</text>
+
+  <!-- Browser -->
+  <rect x="40" y="150" width="232" height="190" rx="16" class="box"/>
+  <text x="64" y="184" class="t" font-size="18" font-weight="600">浏览器</text>
+  <text x="64" y="216" class="m" font-size="14">C 端 · 16 个页面</text>
+  <text x="64" y="242" class="m" font-size="14">B 端 · 12 个页面</text>
+  <text x="64" y="268" class="m" font-size="14">原生 JS，无构建步骤</text>
+  <rect x="62" y="288" width="188" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.05" stroke="#2C3B60"/>
+  <text x="156" y="308" class="s" font-size="13" text-anchor="middle">/c/ · /admin/ · /portal</text>
+
+  <!-- FastAPI core -->
+  <rect x="330" y="120" width="516" height="410" rx="20" fill="url(#core)" stroke="#3B4E7C" stroke-width="1.6"/>
+  <rect x="330" y="120" width="516" height="52" rx="20" fill="url(#orange)" fill-opacity="0.14"/>
+  <text x="356" y="154" class="t" font-size="19" font-weight="700">FastAPI · 单端口 8000</text>
+
+  <g>
+    <rect x="354" y="194" width="468" height="52" rx="10" fill="#0F1730" stroke="#2C3B60"/>
+    <text x="372" y="216" class="s" font-size="14" font-weight="600">API 路由 21 个</text>
+    <text x="372" y="236" class="m" font-size="12.5">/api/v1 · auth / exercises / plans / chat / admin …</text>
+
+    <rect x="354" y="258" width="222" height="52" rx="10" fill="#0F1730" stroke="#2C3B60"/>
+    <text x="372" y="280" class="s" font-size="14" font-weight="600">JWT + RBAC</text>
+    <text x="372" y="300" class="m" font-size="12.5">user / trainer / admin</text>
+
+    <rect x="596" y="258" width="226" height="52" rx="10" fill="#0F1730" stroke="#2C3B60"/>
+    <text x="614" y="280" class="s" font-size="14" font-weight="600">限流</text>
+    <text x="614" y="300" class="m" font-size="12.5">60/min 全局 · AI 5/min</text>
+
+    <rect x="354" y="322" width="222" height="52" rx="10" fill="#0F1730" stroke="#2C3B60"/>
+    <text x="372" y="344" class="s" font-size="14" font-weight="600">SSE 流式对话</text>
+    <text x="372" y="364" class="m" font-size="12.5">断连即取消上游请求</text>
+
+    <rect x="596" y="322" width="226" height="52" rx="10" fill="#0F1730" stroke="#2C3B60"/>
+    <text x="614" y="344" class="s" font-size="14" font-weight="600">静态资源托管</text>
+    <text x="614" y="364" class="m" font-size="12.5">/c /admin /static/images</text>
+
+    <rect x="354" y="386" width="468" height="52" rx="10" fill="#0F1730" stroke="#2C3B60"/>
+    <text x="372" y="408" class="s" font-size="14" font-weight="600">services 层</text>
+    <text x="372" y="428" class="m" font-size="12.5">llm_service · rag_service · kb_service · tracing · operation_log</text>
+
+    <rect x="354" y="450" width="468" height="52" rx="10" fill="#0F1730" stroke="#2C3B60"/>
+    <text x="372" y="472" class="s" font-size="14" font-weight="600">中间件</text>
+    <text x="372" y="492" class="m" font-size="12.5">RequestIdMiddleware → trace_spans 全链路追踪</text>
+  </g>
+
+  <!-- Datastores -->
+  <rect x="906" y="128" width="252" height="90" rx="14" class="box"/>
+  <text x="928" y="160" class="t" font-size="16" font-weight="600">MySQL 8</text>
+  <text x="928" y="184" class="m" font-size="13">用户 / 计划 / 会话 / 日志</text>
+  <text x="928" y="204" class="m" font-size="13">16 张业务表 + 18 个迁移</text>
+
+  <rect x="906" y="236" width="252" height="90" rx="14" class="box"/>
+  <text x="928" y="268" class="t" font-size="16" font-weight="600">Chroma（嵌入式）</text>
+  <text x="928" y="292" class="m" font-size="13">动作子块向量 · 零部署</text>
+  <text x="928" y="312" class="m" font-size="13">落到 backend/data/chroma</text>
+
+  <rect x="906" y="344" width="252" height="90" rx="14" class="box"/>
+  <text x="928" y="376" class="t" font-size="16" font-weight="600">Redis</text>
+  <text x="928" y="400" class="m" font-size="13">最近 5 轮会话缓存</text>
+  <text x="928" y="420" class="m" font-size="13">可缺省，MySQL 兜底</text>
+
+  <rect x="906" y="452" width="252" height="90" rx="14" class="box"/>
+  <text x="928" y="484" class="t" font-size="16" font-weight="600">LLM API</text>
+  <text x="928" y="508" class="m" font-size="13">OpenAI 兼容协议</text>
+  <text x="928" y="528" class="m" font-size="13">GPT / DeepSeek / Qwen 均可</text>
+
+  <!-- Arrows -->
+  <g stroke="#7C8DB5" stroke-width="1.6" fill="none" marker-end="url(#arrow)">
+    <path d="M272 245H322"/>
+    <path d="M850 173H898"/>
+    <path d="M850 281H898"/>
+    <path d="M850 389H898"/>
+    <path d="M850 497H898"/>
+  </g>
+  <text x="286" y="236" class="m" font-size="12">HTTP</text>
+
+  <!-- Bottom band -->
+  <rect x="40" y="590" width="1118" height="66" rx="14" fill="#FFFFFF" fill-opacity="0.04" stroke="#2C3B60"/>
+  <text x="64" y="620" class="s" font-size="14">数据源：1,324 个中文动作库（GIF + 10 语言步骤）＋ 198 个教练原创动作（谭师库）</text>
+  <text x="64" y="642" class="m" font-size="13">动作媒体挂载到 /static/images 与 /static/videos；数据集目录启动时自动探测</text>
+</svg>
