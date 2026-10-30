@@ -21,14 +21,16 @@ depends_on: Union[str, Sequence[str], None] = None
 def upgrade() -> None:
     op.create_table(
         "system_configs",
-        sa.Column("`key`", sa.String(length=64), nullable=False, comment="配置键"),
+        # 不要写成 "`key`"：反引号会被 MySQL 当作转义，真实列名变成 ```key```，
+        # 与 ORM 的 SystemConfig.key 不匹配（见 0019 迁移修复）。
+        sa.Column("key", sa.String(length=64), nullable=False, comment="配置键"),
         sa.Column("value", mysql.JSON(), nullable=False, comment="配置值（JSON）"),
         sa.Column("description", sa.Text(), nullable=True, comment="配置说明"),
         sa.Column("updated_by", sa.BigInteger(), nullable=True, comment="最后修改者 ID"),
         sa.Column("created_at", sa.DateTime(), server_default=sa.func.now(), nullable=False, comment="创建时间"),
         sa.Column("updated_at", sa.DateTime(), server_default=sa.func.now(), nullable=False, comment="更新时间"),
         sa.ForeignKeyConstraint(["updated_by"], ["users.id"], ondelete="SET NULL"),
-        sa.PrimaryKeyConstraint("`key`"),
+        sa.PrimaryKeyConstraint("key"),
         mysql_character_set="utf8mb4",
         mysql_collate="utf8mb4_unicode_ci",
         comment="运行时系统配置（LLM / 限流 / 业务参数等）",

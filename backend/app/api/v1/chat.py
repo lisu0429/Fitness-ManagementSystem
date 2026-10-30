@@ -5,6 +5,7 @@ Step 2：接入 LLM（OpenAI 兼容协议）—— 当前
 Step 3：Chroma RAG + 企业文档知识库（下一步）
 """
 
+import asyncio
 import json
 from typing import Annotated, AsyncIterator
 

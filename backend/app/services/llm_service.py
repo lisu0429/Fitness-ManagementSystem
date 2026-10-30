@@ -210,6 +210,64 @@ async def save_llm_config(updates: dict[str, Any], updated_by: int | None = None
         return dict(cfg.value)
 
 
+# ============ 推理模型输出清洗 ============
+
+class _ReasoningStripper:
+    """剥掉推理模型的 <think>…</think> 推理段。
+
+    MiniMax M 系列会把思维链直接写进 content（形如 `<think>…</think>\n\n正文`），
+    对终端用户毫无意义。逐 chunk 喂入，只返回可展示的正文；跨 chunk 的半截标签
+    会被暂存到下一次 feed 再判断，避免把 "<thi" 这种碎片发给前端。
+    """
+
+    _OPEN = "<think>"
+    _CLOSE = "</think>"
+
+    def __init__(self) -> None:
+        self._buf = ""
+        self._inside = False
+
+    def feed(self, text: str) -> str:
+        self._buf += text
+        out: list[str] = []
+        while self._buf:
+            if self._inside:
+                idx = self._buf.find(self._CLOSE)
+                if idx == -1:
+                    keep = len(self._CLOSE) - 1
+                    if len(self._buf) > keep:
+                        self._buf = self._buf[-keep:]
+                    break
+                self._buf = self._buf[idx + len(self._CLOSE):]
+                self._inside = False
+            else:
+                idx = self._buf.find(self._OPEN)
+                if idx == -1:
+                    keep = len(self._OPEN) - 1
+                    if len(self._buf) > keep:
+                        out.append(self._buf[:-keep])
+                        self._buf = self._buf[-keep:]
+                    break
+                out.append(self._buf[:idx])
+                self._buf = self._buf[idx + len(self._OPEN):]
+                self._inside = True
+        return "".join(out)
+
+    def flush(self) -> str:
+        """流结束时调用：丢弃未闭合的推理段，返回剩余正文。"""
+        if self._inside:
+            self._buf = ""
+            return ""
+        out, self._buf = self._buf, ""
+        return out
+
+
+def strip_reasoning(text: str) -> str:
+    """一次性剥掉整段文本里的推理内容（非流式路径用）。"""
+    stripper = _ReasoningStripper()
+    return (stripper.feed(text) + stripper.flush()).strip()
+
+
 async def chat(
     messages: list[dict[str, str]],
     *,
@@ -279,7 +337,8 @@ async def chat(
 
     latency_ms = int((time.monotonic() - start) * 1000)
     msg = resp.choices[0].message
-    content = msg.content or ""
+    # 推理模型会把 <think>…</think> 写进 content，直接给用户看毫无意义
+    content = strip_reasoning(msg.content or "")
 
     # 工具调用抽取（OpenAI 标准 function-calling 格式）
     tool_calls: list[dict] = []
@@ -386,18 +445,30 @@ async def stream_chat(
     prompt_tokens = 0
     completion_tokens = 0
     total_tokens = 0
+    stripper = _ReasoningStripper()
     async for chunk in stream:
         # 文本增量
         if chunk.choices:
             delta = chunk.choices[0].delta.content
             if delta:
-                full_content += delta
-                yield {"type": "delta", "text": delta}
+                visible = stripper.feed(delta)
+                if visible:
+                    # 剥掉推理段后，正文常以 "\n\n" 开头；首个可见包去掉前导空白
+                    if not full_content:
+                        visible = visible.lstrip()
+                    if visible:
+                        full_content += visible
+                        yield {"type": "delta", "text": visible}
         # usage 在最后一个 chunk（OpenAI stream_options.include_usage=True）
         if getattr(chunk, "usage", None):
             prompt_tokens = chunk.usage.prompt_tokens or 0
             completion_tokens = chunk.usage.completion_tokens or 0
             total_tokens = chunk.usage.total_tokens or 0
+
+    tail = stripper.flush()
+    if tail:
+        full_content += tail
+        yield {"type": "delta", "text": tail}
 
     latency_ms = int((time.monotonic() - start) * 1000)
     yield {
