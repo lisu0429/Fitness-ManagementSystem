@@ -1,15 +1,16 @@
 // index-tabs.js — 单页 Tab 切换（主导航在 .navbar 内）
 //
 // 行为：
-// - 4 个面板 (#panel-exercises / #panel-plans / #panel-templates / #panel-profile) 切换 hidden
-// - 同步激活样式（navbar__link--active + aria-selected）
-// - URL hash 同步（#exercises / #plans / #templates / #profile），刷新可恢复
-// - 谭师库用独立 URL（tan-library.html），不参与同页切换
+// - 只有"动作库"留在首页做页内 tab，切换 #panel-exercises 的 hidden
+// - 同步激活样式（navbar__link--active / aria-selected）
+// - URL hash 同步（#exercises），刷新可恢复
+// - 谭师库 / 训练计划 / 模板市场 / 个人中心都是独立页面，走普通跳转，
+//   不再由本脚本拦截（此前它们指向 #plans 等锚点，会落到占位面板）
 
 const TABS = document.querySelectorAll('.navbar__link[data-tab]');
 const PANELS = document.querySelectorAll('.tab-panel');
 
-const INLINE_TABS = new Set(['exercises', 'plans', 'templates', 'profile']);
+const INLINE_TABS = new Set(['exercises']);
 
 function activate(name) {
     PANELS.forEach(p => {
